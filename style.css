@@ -10,10 +10,6 @@
 body {
   min-height: 100vh;
   background: linear-gradient(#eeeeff, #c8c7ff);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Background Charts Section */
@@ -23,7 +19,7 @@ body {
   gap: 20px;
   padding: 20px;
   max-width: 1400px;
-  width: 100%;
+  margin: 0 auto;
 }
 
 .chart-container {
@@ -109,10 +105,11 @@ body {
 }
 
 #chatbot-toggler {
-  position: relative;
-  margin-top: 30px;
-  height: 70px;
-  width: 70px;
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  height: 50px;
+  width: 50px;
   border: none;
   display: flex;
   align-items: center;
@@ -121,12 +118,6 @@ body {
   border-radius: 50%;
   background: #5350c4;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 24px rgba(83, 80, 196, 0.3);
-}
-
-#chatbot-toggler:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 32px rgba(83, 80, 196, 0.4);
 }
 
 body.show-chatbot #chatbot-toggler {
@@ -136,7 +127,6 @@ body.show-chatbot #chatbot-toggler {
 #chatbot-toggler span {
   color: #fff;
   position: absolute;
-  font-size: 1.8rem;
 }
 
 body.show-chatbot #chatbot-toggler span:first-child, #chatbot-toggler span:last-child{
@@ -149,15 +139,15 @@ body.show-chatbot #chatbot-toggler span:last-child{
 
 .chatbot-popup {
   position: fixed;
-  right: 50%;
-  bottom: 50%;
-  transform: translate(50%, 50%) scale(0.2);
+  right: 25px;
+  bottom: 90px;
   width: 420px;
   background: #fff;
   overflow: hidden;
   border-radius: 15px;
   opacity: 0;
-  transform-origin: center center;
+  transform: scale(0.2);
+  transform-origin: bottom right;
   pointer-events: none;
   box-shadow: 0 0 128px rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease;
@@ -166,7 +156,7 @@ body.show-chatbot #chatbot-toggler span:last-child{
 body.show-chatbot .chatbot-popup {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(50%, 50%) scale(1);
+    transform: scale(1);
 }
 
 .chat-header {
