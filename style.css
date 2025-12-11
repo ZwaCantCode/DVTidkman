@@ -149,24 +149,28 @@ body.show-chatbot #chatbot-toggler span:last-child{
 
 .chatbot-popup {
   position: fixed;
-  right: 50%;
-  bottom: 50%;
-  transform: translate(50%, 50%) scale(0.2);
-  width: 420px;
-  background: #fff;
-  overflow: hidden;
-  border-radius: 15px;
-  opacity: 0;
-  transform-origin: center center;
-  pointer-events: none;
-  box-shadow: 0 0 128px rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
-  transition: all 0.1s ease;
+  top: 0; /* Fullscreen on mobile */
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 0; /* Mobile default */
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 128px rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease;
+  /* Initial closed state: smaller and off-screen */
+  transform: scale(0.2) translate(0, 100%); 
+  transform-origin: bottom middle;
 }
 
 body.show-chatbot .chatbot-popup {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(50%, 50%) scale(1);
+  transform: scale(1);
 }
 
 .chat-header {
@@ -455,5 +459,9 @@ em-emoji-picker {
     height: 40px;
     width: 40px;
   }
+  .chat-body {
+    height: 100%;
+    margin-bottom: 0; /* Critical for chat body on mobile */
+  }
 } 
 
