@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
+    <!-- Background Charts Section -->
+    <div class="charts-background">
+      <div class="chart-container" id="room-chart-container">
+        <h3 class="chart-title">Ketersediaan Ruangan</h3>
+        <canvas id="roomChart"></canvas>
+      </div>
+      <div class="chart-container" id="schedule-chart-container">
+        <h3 class="chart-title">Jadwal Dokter Minggu Ini</h3>
+        <canvas id="scheduleChart"></canvas>
+      </div>
+      <div class="chart-container" id="medicine-chart-container">
+        <h3 class="chart-title">Stok Obat</h3>
+        <canvas id="medicineChart"></canvas>
+      </div>
+    </div>
+
     <button id="chatbot-toggler">
       <span class="material-symbols-outlined">mode_comment</span>
       <span class="material-symbols-rounded">close</span>
@@ -80,6 +96,10 @@
     <!-- linking emoji mart script for emoji picker -->
     <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
 
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
     <script src="script.js"></script>
+    <script src="charts.js"></script>
   </body>
 </html>
